@@ -5,6 +5,7 @@ PREPROCESSING
   - Augmentation
   - Normalization
   ↓
+  
 MODEL TRAINING
   - CNNs
   - Weighted Loss
