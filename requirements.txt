@@ -5,6 +5,8 @@ skin_cancer_detection/
 │   ├── train.csv
 │   └── test.csv
 │
+
+
 ├── src/
 │   ├── dataset.py          # Dataset and transforms
 │   ├── model.py            # Model architecture
