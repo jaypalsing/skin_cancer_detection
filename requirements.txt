@@ -1,0 +1,29 @@
+skin_cancer_detection/
+├── data/
+│   ├── train_images/
+│   ├── test_images/
+│   ├── train.csv
+│   └── test.csv
+│
+├── src/
+│   ├── dataset.py          # Dataset and transforms
+│   ├── model.py            # Model architecture
+│   ├── train.py            # Training loop
+│   ├── evaluate.py         # Evaluation code
+│   └── utils.py            # Metrics, helpers
+│
+├── scripts/
+│   ├── data_exploration.py   # EDA: visualizing images and distributions
+│   ├── preprocessing.py      # Image resizing, augmentations
+│   ├── run_training.py       # Main training entry point
+│   ├── run_evaluation.py     # Model evaluation
+│   └── generate_reports.py   # Create ROC, confusion matrix figures
+│
+├── outputs/
+│   ├── checkpoints/
+│   └── logs/
+│
+├── requirements.txt
+├── README.md
+└── .vscode/
+    └── launch.json          # (optional) VS Code debugger config
