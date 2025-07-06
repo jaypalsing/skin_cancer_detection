@@ -5,8 +5,6 @@ skin_cancer_detection/
 │   ├── train.csv
 │   └── test.csv
 │
-
-
 ├── src/
 │   ├── dataset.py          # Dataset and transforms
 │   ├── model.py            # Model architecture
@@ -29,3 +27,90 @@ skin_cancer_detection/
 ├── README.md
 └── .vscode/
     └── launch.json          # (optional) VS Code debugger config
+
+
+📝 Summary Table
+Step	Script	Purpose
+1️⃣	data_exploration.py	Inspect data, visualize samples
+2️⃣	preprocessing.py	Check/resize images
+3️⃣	run_training.py	Train the model
+4️⃣	run_evaluation.py	Evaluate trained model metrics
+5️⃣	generate_reports.py	Generate final ROC/confusion matrix plots
+
+
+✅ 1. ResNet-50
+
+    Deep residual network
+
+    Robust and widely used for classification
+
+✅ 2. EfficientNet-B0
+
+    Smaller and faster
+
+    Good accuracy-speed tradeoff
+
+✅ 3. DenseNet-121
+
+    Densely connected CNN
+
+    Efficient parameter usage
+
+
+    ✅ How to choose which one to use:
+
+In your scripts/run_training.py, you probably have something like:
+
+    
+    MODEL_NAME = "resnet50"
+     
+    MODEL_NAME = "efficientnet_b0"
+    
+    MODEL_NAME = "densenet121"
+
+Just change it to: before running training.
+
+🎯 First: What you are using
+The architectures in your project (ResNet50, DenseNet121, EfficientNetB0) are all convolutional neural networks (CNNs).
+✅ They are not something different from CNNs—they are specific advanced CNN architectures.
+
+Here’s how they fit:
+
+Model Name	        Type	    Year	Notes
+ResNet-50	        CNN	        2015	Deep residual blocks (skip connections), classic
+DenseNet-121	    CNN	        2016	Dense connections between layers, efficient
+EfficientNet-B0	    CNN	        2019	Compound scaling, state-of-the-art efficiency
+
+
+using CNNs—just not the most basic ones (like plain VGG or LeNet). You’re using more modern, deeper CNNs.
+
+
+🧠 Why not use basic CNNs?
+When you say "what about CNN", you probably mean a plain stack of Conv → ReLU → Pool layers.
+This can work for small datasets or academic exercises, but:
+
+❌ For large and complex datasets like ISIC (~33,000 images), plain CNNs are almost always outperformed by ResNet/DenseNet/EfficientNet.
+
+✅ These architectures:
+
+Solve vanishing gradient problems
+
+Have skip connections or dense connections
+
+Are pretrained on ImageNet
+
+Generalize better to medical images
+
+
+trending (2023–2024–2025)?
+Besides these CNNs, the field is moving towards transformers and hybrid architectures:
+
+        Vision Transformer (ViT)
+
+        Swin Transformer
+
+        ConvNeXt (CNN with transformer-like improvements)
+
+But note:
+✅ They are more computationally expensive
+✅ For many projects, EfficientNet and ResNet still perform extremely well
